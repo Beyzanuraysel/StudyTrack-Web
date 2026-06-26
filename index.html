@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>StudyTrack</h1>
+
+    <p class="subtitle">
+        Planla • Odaklan • Başar
+    </p>
+
+    <!-- PLANLAYICI -->
+
+    <div class="planner-card">
+
+        <h2>🗓 Bugünkü Planım</h2>
+
+        <p class="planner-subtitle">
+            Önce planını oluştur, ardından Pomodoro'yu başlat.
+        </p>
+
+        <div class="planner-input">
+
+            <input
+                type="time"
+                id="taskTime">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Görev yaz...">
+
+            <button onclick="addTask()">
+                Ekle
+            </button>
+
+        </div>
+
+        <div id="taskList"></div>
+
+    </div>
+
+
+    <!-- POMODORO -->
+
+    <div class="pomodoro-card">
+
+        <div class="mode-buttons">
+
+            <button
+                class="mode-btn active"
+                onclick="setMode('pomodoro')">
+
+                Pomodoro
+
+            </button>
+
+            <button
+                class="mode-btn"
+                onclick="setMode('short')">
+
+                Short Break
+
+            </button>
+
+            <button
+                class="mode-btn"
+                onclick="setMode('long')">
+
+                Long Break
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="timer"
+            id="timer">
+
+            25:00
+
+        </div>
+
+
+        <div class="buttons">
+
+            <button
+                class="main-btn"
+                onclick="startTimer()">
+
+                START
+
+            </button>
+
+            <button
+                class="main-btn"
+                onclick="pauseTimer()">
+
+                PAUSE
+
+            </button>
+
+            <button
+                class="main-btn"
+                onclick="resetTimer()">
+
+                RESET
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- GÜNLÜK HEDEF -->
+
+    <div class="goal-card">
+
+    <h2>🎯 Günlük Hedef</h2>
+
+    <p class="goal-subtitle">
+        Günlük çalışma süreni belirle.
+    </p>
+
+    <div class="goal-input">
+
+        <input
+            type="number"
+            id="goalInput"
+            placeholder="120"
+            min="1"
+            max="1440">
+
+        <button onclick="saveGoal()">
+            Kaydet
+        </button>
+
+    </div>
+
+    <p class="goal-progress">
+
+        <span id="currentMinutes">
+            0
+        </span>
+
+        /
+
+        <span id="goalMinutes">
+            120
+        </span>
+
+        dk
+
+    </p>
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="progressBar">
+        </div>
+
+    </div>
+
+    <p id="goalMessage"></p>
+
+</div>
+
+
+    <!-- İSTATİSTİK -->
+
+    <div class="stats-card">
+
+        <h2>📊 İstatistikler</h2>
+
+        <p>
+
+            🍅 Pomodoro :
+
+            <span id="pomodoroCount">
+
+                0
+
+            </span>
+
+        </p>
+
+        <p>
+
+            ⏱ Focus Time :
+
+            <span id="focusTime">
+
+                0
+
+            </span>
+
+            dk
+
+        </p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
