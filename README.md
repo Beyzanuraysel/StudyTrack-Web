@@ -26,7 +26,7 @@ Uygulamadaki veriler **Local Storage** kullanılarak tarayıcı üzerinde saklan
 
 ---
 
-### 🎯 Günlük Hedef
+### 🎯 Günlük Hedef ve İstatistikler
 
 ![Günlük Hedef](StudyTrackWeb3.png)
 
